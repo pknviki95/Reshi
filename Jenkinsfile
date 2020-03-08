@@ -10,4 +10,9 @@ node
                 }
    
         }
+        stage ('Email generation')
+        {
+                emailext attachLog: true, body: '', subject: 'This is the build log report for your c program file', to: 'ravirajreshii@gmail.com'
+                emailext attachLog: true, body: '', subject: 'This is the build log report for your c program file', to: 'sivasu4098@gmail.com'
+        }
 }
