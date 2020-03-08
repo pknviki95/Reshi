@@ -8,8 +8,8 @@ pipeline{
         }
         stage ('Static code Analysis' ){
             steps{
-                def scannerHome = tool name: 'sonar-scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
-                withSonarQubeEnv(credentialsId: 'sonarqube') {
+                    def scannerHome = tool name: 'sonar-scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
+                    withSonarQubeEnv(credentialsId: 'sonarqube') {
                     sh """${scannerHome}/bin/sonar-scanner"""
                 }
             }
